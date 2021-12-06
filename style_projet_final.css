@@ -1,0 +1,613 @@
+/* pour toute la page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+
+html, body {
+font-family: 'Noto Sans JP', sans-serif;
+background-color: #000000;
+background-image: linear-gradient(60deg, #000000 0%, #97D9E1 100%);  /* dégradé */
+}
+
+
+
+/* FLECHE RETOUR HDP */
+/* place du bouton sur l'écran */
+#scroll_to_top {
+position: fixed;
+width: 25px;
+height: 25px;
+bottom: 50px;
+right: 30px;
+}
+/* image du bouton retour */
+#scroll_to_top img {
+width: 25px;
+}
+/* changement de taille du bouton quand on passe dessus */
+#scroll_to_top img:hover{
+    width: 35px;
+}
+
+
+
+
+/* HEADER */
+/* couleur taille et position */
+header {
+    position: absolute;
+    width: 100%;
+    height: 8vh;
+    top: 0;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 0 2rem;
+}
+/* propriétes des nav */
+nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* propriétes logo */
+.logo {
+    font-size: 2rem;
+}
+
+.toggle {
+    display: none;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    width: 550px;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+/* SLIDER */
+/* propriétes des images de slider */
+.slider {
+    width: 1200px;
+    height: 400px;
+    overflow: hidden;
+    margin: 0px auto;
+}
+.slides {
+    width: calc(1200px * 2);
+    animation: glisse 10s infinite;
+}
+.slide {
+    float: left;
+}
+/* images qui se déplacent */
+@keyframes glisse {
+    0% {
+        transform: translateX(0);
+    }
+    10% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-1200px);
+    }
+    60% {
+        transform: translateX(-1200px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+/* FORMATION */
+
+/* caractéristiques du bloc formation */
+.formation{
+    margin: 0px auto;
+    display: flex;
+    justify-content:space-around;
+    width: 96%;
+    background-color: none;
+    border: 3px solid rgb(83, 83, 83);
+    border-radius: 5px;
+    padding: 1.6%;
+    
+}
+
+.formation_texte p{
+    text-align:justify;
+    
+}
+
+.formation_texte h2{
+    background-image: linear-gradient(60deg, #ffffff 0%, #97D9E1 100%);
+    border-radius: 5px;
+}
+
+.formation_texte h3{
+    background-image: linear-gradient(60deg, #ffffff 0%, #97D9E1 100%);
+    border-radius: 5px;
+}
+
+.formation_texte{
+    align-items: right;
+    align-content:flex-end;
+    background-color: none;
+    width: 48%;
+    margin: 2%;
+    padding: 2%;
+}
+
+.formation_image img{
+    left: 150px;
+}
+
+.formation_image{
+    background-color: none;
+    width: 48%;
+    margin: 2%;
+}
+
+
+/* FLIP CARD */
+
+.test_colonne{
+    display: flex;
+    column-count: 3;
+    column-width: 30%;
+    column-gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+
+
+.card {
+margin:0 auto;
+width:240px;
+height:320px;
+perspective: 1000px;
+text-align: center;
+}
+
+.card-inner {
+position:relative;
+width: 100%;
+height:100%;
+transition: transform 0.6s;
+transform-style: preserve-3d;
+}
+/* flip card qui tourne de 180 degrès */
+.card:hover .card-inner {
+transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+position:absolute;
+height:100%;
+width: 100%;
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
+padding:16px;
+border-radius:8px;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+/* extérieur de la flipcard */
+.card-front {
+background-image:url('images/front.jpg');
+background-size:cover;
+background-position:center center;
+display:flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-end;
+overflow: hidden;
+}
+    
+.card-front:before {
+content: '';
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0px;
+background: linear-gradient(0deg, black, transparent);
+}
+
+.card-front .card-content {
+z-index: 1;
+color:white;
+}
+    
+.card-front .card-content p {
+color:#ececec;
+}
+/* interieur de la flipcard */
+.card-back {
+transform: rotateY(180deg);
+background:white;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+    
+.card-back .card-image {
+width:120px;
+height:120px;
+margin:0 auto;
+border:solid 1px #cecece;
+border-radius:100%;
+background-image:url('images/back.jpg');
+background-size:cover;
+background-position:center center;
+}
+    
+.card-back p {
+margin-top:12px;
+}
+    
+.card-back .card-icons {
+display:flex;
+justify-content: center;
+align-items: center;
+}
+    
+.card-back .card-icons a {
+font-size:18px;
+color:white;
+background:black;
+width:42px;
+height:42px;
+border-radius:100%;
+margin:8px;
+display:flex;
+align-items: center;
+justify-content: center;
+text-decoration: none;
+transition:opacity .2s;
+}
+    
+.card-back .card-icons a:hover {
+cursor:pointer;
+opacity:0.7;
+}
+
+.card-front {
+transition: opacity .6s;
+}
+    
+.card:hover .card-front {
+opacity:0;
+}
+
+
+/* CONTACT */
+
+.contenair{
+    
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-family: 'ubuntu', sans-serif;
+
+}
+/*------------------------------------formulaire---------------------------------*/
+.form{
+    height: 450px;
+    width: 300px;
+    color: #fff;
+    background-color: rgb(27, 27, 27);
+}
+.form form{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form  form input{
+    color: #fff;
+    height: 30px;
+    width: 250px;
+    border: none;
+    border-bottom: 2px solid rgb(94, 93, 93);
+    background-color: rgb(27, 27, 27);
+}
+
+.form form textarea{
+    color: #fff;
+    height: 100px;
+    width: 250px;
+    border: none;
+    border-bottom: 2px solid rgb(94, 93, 93);
+    background-color: rgb(27, 27, 27);
+}
+.form form .envoi input{
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 20px;
+    padding: 10px 10px;
+    width: 100px;
+    border: none;
+    background-color: rgb(94, 93, 93);
+    box-shadow: 3px 3px 0 0;
+    cursor: pointer;
+    transition: 0.3s;
+  
+}
+.form form .envoi input:hover{
+    background-color: #fff;
+    color: rgb(94, 93, 93);
+}
+
+
+.form h1{
+    text-transform: uppercase;
+    font-weight: 300;
+}
+.form h1, p{
+    text-align: center;
+}
+
+/*------------------------------------map---------------------------------*/
+
+.map{
+    height: 450px;
+    width: 600px;
+    position: relative;
+
+}
+
+.map iframe{
+    position: absolute;
+    height: 400px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    box-shadow: 0 5px 10px rgba(7, 7, 7, 0.514);
+
+
+}
+/*------------------------------------social---------------------------------*/
+
+.social{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-color: rgb(243, 243, 243);
+
+}
+
+.social i{
+    padding: 10px;
+    width: 25px;
+    border-bottom: 1px solid rgb(212, 212, 212);
+    font-size: 25px;
+    color: rgb(110, 110, 110);
+    cursor: pointer;
+    transition: 0.5s;
+
+}
+.social i .fa-github-alt{
+    border-bottom: none;
+}
+
+
+.social .fa-youtube:hover{
+    background-color: #f21d1d;
+    color: rgb(255, 255, 255);
+    
+}
+.social .fa-linkedin-in:hover{
+    background-color: #0a66c2;
+    color: #fff;
+}
+.social .fa-instagram:hover{
+    background-color: #c32aa3;
+    color: #fff;
+}
+
+
+
+/* FOOTER */
+
+footer ul
+{
+    display: flex;
+    justify-content: center;
+}
+footer li {
+    margin: 100px;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 150px;
+    background: linear-gradient(225deg, rgb(86, 190, 94), #532e1f );
+    box-shadow:  -5px 5px 9px #ffffff;
+                    
+    cursor: pointer;
+}
+
+footer li:nth-child(1) i {
+    color: rgb(255, 255, 255);
+}
+
+footer li:nth-child(2) i {
+    color: rgb(255, 255, 255);
+}
+
+footer li:nth-child(3) i {
+    color: rgb(255, 255, 255);
+}
+
+
+
+/* MEDIA QUERIES */
+/* tablette */
+@media screen and (max-width:1000px){
+    
+    header {
+        background: transparent;
+    }
+
+    .toggle {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        position: relative;
+        z-index: 20;
+    }
+
+    .logo {
+        position: relative;
+        z-index: 20;
+    }
+
+    .ouvrir {
+        display: block;
+    }
+
+    .fermer {
+        display: none;
+    }
+
+    .open .ouvrir {
+        display: none;
+    }
+
+    .open .fermer {
+        display: block;
+    }
+
+    .menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #000;
+        flex-direction: column;
+        padding: 2rem;
+        justify-content: space-around;
+        transform: translateX(-100%);
+        transition: transform 1s;
+    }
+
+    .menu li a {
+        font-size: 2rem;
+    }
+
+    .btn {
+        font-size: 2rem;
+    }
+
+    .open .menu {
+        transform: translateX(0);
+    }
+    
+
+    footer ul{
+        flex-wrap: wrap; /*inverse le sens des boutons*/
+    }
+
+
+    .bloc{
+        width: 40%;
+        margin: 0 0;
+    }
+    .bloc:nth-child(1),
+    .bloc:nth-child(2){
+        margin-bottom: 50px;
+    }
+    .slider{
+        display: none;
+    }
+
+    .test_colonne{
+        flex-direction: column;
+        width: 90%;
+        
+    }
+    .card{
+        margin-block-end: 50px;
+    }
+
+
+    .map{
+		display: none;
+	}
+    .social{
+        position: absolute;
+        flex-direction:row;
+        bottom: 10%;
+    }
+    .social i{
+        border-right: 1px solid rgb(212, 212, 212);
+    }
+
+    .formation_image{
+        display: none;
+    }
+}
+
+/* telephones */
+
+@media screen and (max-width: 700px){
+    .contenu-footer{
+        width: 320px;
+    }
+    .bloc{
+        width: 300px;
+        margin: 30px 30px
+    }
+    .bloc:nth-child(1),
+    .bloc:nth-child(2){
+        margin-bottom: 30px;
+    }
+    .bloc:nth-child(1){
+        margin-top: 0;
+    }
+
+    .test_colonne{
+        flex-direction: column;
+        width: 90%;
+        
+    }
+    .card{
+        margin-block-end: 50px;
+    }
+
+    .formation_image{
+        display: none;
+    }
+}
