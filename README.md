@@ -2,7 +2,7 @@ debut README
 <h1>PROJET PROGRAMMATION WEB</h1>
 <h2>Contexte du projet</h2>
 <p>Le projet de programmation web est réalisé dans le cadre de l'apprentissage des languages HTML, CSS et JS en deuxième année.
-Ce projet à été réaliser graçe à plusieurs séances assisté et d'autres en autonimie.
+Ce projet à été réalisé graçe à plusieurs séances assistée et d'autres en autonomie.
 </p>
 <br>
 <br>
